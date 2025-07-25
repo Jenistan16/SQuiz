@@ -1,0 +1,232 @@
+:root {
+    --math-color: #6a4cff;
+    --science-color: #ff4c4c;
+    --history-color: #4cff9d;
+    --english-color: #ff9d4c;
+    --subject-color: var(--math-color);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;
+    background: linear-gradient(135deg, 
+        rgba(106,76,255,0.15) 0%, 
+        rgba(255,76,76,0.15) 50%, 
+        rgba(76,255,157,0.15) 100%);
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    min-height: 100vh;
+}
+
+.subject-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.subject-header:hover {
+    transform: translateY(-5px);
+}
+
+.subject-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+}
+
+/* Rest of your existing CSS remains the same */
+
+.subject-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.subject-icon {
+    font-size: 3rem;
+    margin-right: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.subject-title {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.topic-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.topic-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.topic-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.topic-content {
+    padding: 20px;
+}
+
+.topic-title {
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.topic-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.topic-stats {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.math-bg { background-color: var(--math-color); }
+.science-bg { background-color: var(--science-color); }
+.history-bg { background-color: var(--history-color); }
+.english-bg { background-color: var(--english-color); }
+
+/* Quiz interface styles */
+.quiz-container {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.question-counter {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.question-text {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.option-btn {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.option-btn:hover {
+    border-color: #aaa;
+    background: #f9f9f9;
+}
+
+.option-btn.selected {
+    border-color: var(--subject-color);
+    background-color: rgba(74, 107, 223, 0.1);
+}
+
+.navigation-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.next-btn {
+    background-color: var(--subject-color);
+    color: white;
+}
+
+.next-btn:hover {
+    background-color: #3a56c7;
+}
+
+.explanation-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-left: 4px solid var(--subject-color);
+    border-radius: 4px;
+    display: none;
+}

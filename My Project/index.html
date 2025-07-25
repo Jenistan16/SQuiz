@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SQuiz </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Subject Selection Screen -->
+        <div id="subject-screen">
+            <!-- Mathematics -->
+            <div class="subject-header math-bg" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                <div class="subject-icon">🧮</div>
+                <h1 class="subject-title">Mathematics</h1>
+            </div>
+            <div class="topics-grid">
+                <div class="topic-card" onclick="startQuiz('math', 'number-systems')">
+                    <div class="topic-image" style="background-image: url('https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="topic-content">
+                        <h3 class="topic-title"><span class="topic-icon">🧮</span> Number Systems</h3>
+                        <p>Learn about binary, hexadecimal, and other numerical representations</p>
+                        <div class="topic-stats">
+                            <span>100 questions</span>
+                            <span>Beginner to Advanced</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic-card" onclick="startQuiz('math', 'algebra')">
+                    <div class="topic-image" style="background-image: url('https://images.unsplash.com/photo-1546483875-ad9014c88eba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1482&q=80');"></div>
+                    <div class="topic-content">
+                        <h3 class="topic-title"><span class="topic-icon">✖️</span> Algebra</h3>
+                        <p>Master equations, inequalities, and algebraic expressions</p>
+                        <div class="topic-stats">
+                            <span>100 questions</span>
+                            <span>Beginner to Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Science -->
+            <div class="subject-header science-bg" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                <div class="subject-icon">🔬</div>
+                <h1 class="subject-title">Science</h1>
+            </div>
+            <div class="topics-grid">
+                <div class="topic-card" onclick="startQuiz('science', 'physics')">
+                    <div class="topic-image" style="background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80');"></div>
+                    <div class="topic-content">
+                        <h3 class="topic-title"><span class="topic-icon">⚛️</span> Physics</h3>
+                        <p>Explore motion, energy, and the fundamental forces of nature</p>
+                        <div class="topic-stats">
+                            <span>100 questions</span>
+                            <span>Beginner to Advanced</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic-card" onclick="startQuiz('science', 'chemistry')">
+                    <div class="topic-image" style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="topic-content">
+                        <h3 class="topic-title"><span class="topic-icon">🧪</span> Chemistry</h3>
+                        <p>Understand atoms, molecules, and chemical reactions</p>
+                        <div class="topic-stats">
+                            <span>100 questions</span>
+                            <span>Beginner to Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History -->
+            <div class="subject-header history-bg" style="background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                <div class="subject-icon">🏛️</div>
+                <h1 class="subject-title">History</h1>
+            </div>
+            <div class="topics-grid">
+                <div class="topic-card" onclick="startQuiz('history', 'ancient')">
+                    <div class="topic-image" style="background-image: url('https://images.unsplash.com/photo-1546587348-d12660c30c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80');"></div>
+                    <div class="topic-content">
+                        <h3 class="topic-title"><span class="topic-icon">🏺</span> Ancient Civilizations</h3>
+                        <p>Explore Egypt, Greece, Rome, and other ancient cultures</p>
+                        <div class="topic-stats">
+                            <span>100 questions</span>
+                            <span>Beginner to Advanced</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic-card" onclick="startQuiz('history', 'modern')">
+                    <div class="topic-image" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1568&q=80');"></div>
+                    <div class="topic-content">
+                        <h3 class="topic-title"><span class="topic-icon">🗽</span> Modern History</h3>
+                        <p>Learn about world wars, revolutions, and recent history</p>
+                        <div class="topic-stats">
+                            <span>100 questions</span>
+                            <span>Beginner to Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div class="subject-header english-bg" style="background-image: url('https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80');">
+                <div class="subject-icon">📚</div>
+                <h1 class="subject-title">English</h1>
+            </div>
+            <div class="topics-grid">
+                <div class="topic-card" onclick="startQuiz('english', 'grammar')">
+                    <div class="topic-image" style="background-image: url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');"></div>
+                    <div class="topic-content">
+                        <h3 class="topic-title"><span class="topic-icon">✍️</span> Grammar</h3>
+                        <p>Master sentence structure, punctuation, and usage</p>
+                        <div class="topic-stats">
+                            <span>100 questions</span>
+                            <span>Beginner to Advanced</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic-card" onclick="startQuiz('english', 'literature')">
+                    <div class="topic-image" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80');"></div>
+                    <div class="topic-content">
+                        <h3 class="topic-title"><span class="topic-icon">📖</span> Literature</h3>
+                        <p>Explore classic and contemporary literary works</p>
+                        <div class="topic-stats">
+                            <span>100 questions</span>
+                            <span>Beginner to Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quiz Interface (initially hidden) -->
+        <div id="quiz-screen" style="display: none;">
+            <div class="quiz-container">
+                <div class="question-counter">Question 1 of 100</div>
+                <h2 class="question-text" id="question-text">Loading question...</h2>
+                
+                <div class="options-grid" id="options-container">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+                
+                <div class="explanation-box" id="explanation">
+                    <h3>Explanation</h3>
+                    <p id="explanation-text"></p>
+                </div>
+                
+                <div class="navigation-btns">
+                    <button class="nav-btn" id="prev-btn" disabled>Previous</button>
+                    <button class="nav-btn next-btn" id="next-question">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
